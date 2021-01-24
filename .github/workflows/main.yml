@@ -2,13 +2,13 @@
 
 name: CI
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -24,17 +24,17 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-        
+
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.4
-        with: 
-          version: 12 
+        with:
+          version: 12
       - name: GitHub Action for NPM/Chrome
         uses: daleobrien/npm-with-chrome-browser-action@v1.0.1
         with:
-          # Npm Command 
+          # Npm Command
           cmd: install
-      - name: creating Build 
+      - name: creating Build
         run: npm build
       - name: installing surge
         run: npm install -g surge
