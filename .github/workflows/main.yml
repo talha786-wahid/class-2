@@ -33,9 +33,9 @@ jobs:
         uses: daleobrien/npm-with-chrome-browser-action@v1.0.1
         with:
           # Npm Command
-          cmd: install
+          cmd: npm install
       - name: creating Build
-        run: npm build
+        run: npm run build
       - name: installing surge
         run: npm install -g surge
       - name: deploying on Surge
